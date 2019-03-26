@@ -1,2 +1,2 @@
 # dotfiles
-Zsh configuration files
+Linux terminal shell configuration files for zsh

@@ -1,0 +1,7 @@
+#================================================
+#                     Emby
+#================================================
+alias embymov='curl --data "" http://192.168.1.100:8096/emby/Items/f137a2dd21bbc1b99aa5c0f6bf02a805/Refresh\?Recursive\=true\&api_key\=915c3bdc8be440b48a82cf89fc7aa11b'
+alias embymus='curl --data "" http://192.168.1.100:8096/emby/Items/7e64e319657a9516ec78490da03edccb/Refresh\?Recursive\=true\&api_key\=915c3bdc8be440b48a82cf89fc7aa11b'
+alias embytv='curl --data "" http://192.168.1.100:8096/emby/Items/767bffe4f11c93ef34b805451a696a4e/Refresh\?Recursive\=true\&api_key\=915c3bdc8be440b48a82cf89fc7aa11b'
+alias embycon='curl --data "" http://192.168.1.100:8096/emby/Items/b34574845035cd222917cc69435b145f/Refresh\?Recursive\=true\&api_key\=915c3bdc8be440b48a82cf89fc7aa11b'

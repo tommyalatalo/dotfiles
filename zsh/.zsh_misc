@@ -1,0 +1,79 @@
+#================================================
+#                 Miscellaneous
+#================================================
+alias zshconfig="sudo vim ~/.zshrc"
+alias ohmyzsh="sudo vim ~/.oh-my-zsh"
+
+alias fzyf="find . -type f | fzy"
+alias fzyd="find . -type d | fzy"
+
+alias diff='colordiff'              # requires colordiff package
+alias grep='grep --color=auto'
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias nano='nano -w'
+alias ping='ping -c 5'
+alias dmesg='dmesg -HL'
+
+alias aurup='yaourt -Syu --aur --noconfirm'
+alias backups='sh ~/.scripts/borg/listBackups.sh'
+alias nas='ssh admin@192.168.1.100'
+alias rnas='ssh admin@192.168.2.100'
+alias res='sudo reboot now'
+alias fbm='ssh root@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbmovies.sh"'
+alias fbt='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbtvshows.sh"'
+alias fbc='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbconcerts.sh"'
+
+## Privileged access
+if (( UID != 0 )); then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias svim='sudoedit'
+    alias root='sudo -i'
+    alias reboot='sudo systemctl reboot'
+    alias poweroff='sudo systemctl poweroff'
+    alias update='sudo pacman -Su'
+    alias netctl='sudo netctl'
+fi
+
+## ls
+alias ls='ls -hF --color=auto'
+alias lr='ls -R'                    # recursive ls
+alias ll='ls -la'
+alias la='ll -A'
+alias lx='ll -BX'                   # sort by extension
+alias lz='ll -rS'                   # sort by size
+alias lt='ll -rt'                   # sort by date
+alias lm='la | more'
+
+## Safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+# safer alternative w/ timeout, not stored in history
+alias rm=' timeout 3 rm -Iv --one-file-system'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias cls=' echo -ne "\033c"'       # clear screen for real (it does not work in Terminology)
+
+## Make Bash error tolerant
+alias :q=' exit'
+alias :Q=' exit'
+alias :x=' exit'
+
+## Navigation
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+## General
+alias cl='clear'
+alias xx='exa --long --header --git'
+
+## Suffixes
+alias -s vim='sudo vim'
