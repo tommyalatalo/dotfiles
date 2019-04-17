@@ -1,0 +1,10 @@
+#================================================
+#                    Nomad 
+#================================================
+
+alias nsmem='nomad server members'
+alias njplan='nomad job plan'
+alias njrun='nomad job run'
+alias njstat='nomad job status'
+alias njstop='nomad job stop'
+alias njpurge='nomad job stop -purge'

@@ -2,8 +2,8 @@
 unsetopt correct_all
 unsetopt correct
 
-ZSH_THEME="eastwood-custom"
-#ZSH_THEME="avit-improved"
+#ZSH_THEME="eastwood-custom"
+ZSH_THEME="avit-improved"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -28,3 +28,6 @@ plugins=(
 
 # source emby config
 [ -f ~/.zsh_emby ] && source ~/.zsh_emby
+
+# source nomad config
+[ -f ~/.zsh_nomad ] && source ~/.zsh_nomad

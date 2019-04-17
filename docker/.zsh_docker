@@ -1,17 +1,28 @@
 #================================================
 #                   Docker
 #================================================
+dxsh() { docker exec -it $1 sh }
+dxbash() { docker exec -it $1 bash }
+alias dx="docker exec"
+alias dstop="docker stop"
+alias drun="docker run"
+alias dxit="docker exec -it"
+alias drm="docker rm"
+alias drmi="docker rm"
 alias dcu='docker-compose up -d'
-alias dcup=dcu
+alias dcup='docker-compose up -d'
 alias dcub='docker-compose up --build -d'
+alias dcd='docker-compose down'
 alias dcdown='docker-compose down'
-alias dcd=dcdown
 alias dcl='docker-compose logs -ft'
-alias dl='docker logs -ft'
+alias dl='docker logs -f'
 alias stash='git stash'
 alias sdrop='git stash && git stash drop'
-alias sd=sdrop
 alias spop='git stash pop'
+alias sd='git stash && git stash drop'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
-alias dnuke='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
+alias idb='docker exec -it influxdb /bin/bash'
+alias dnuke='docker system prune -a && docker volume prune' #stop containers first
+
+dlt() { docker logs --follow $1 --tail 250}
