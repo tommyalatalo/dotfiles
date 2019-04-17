@@ -1,0 +1,9 @@
+# Mouse Buttons
+"xdotool key alt+F4"
+b:6
+"xdotool key ctrl+s"
+b:7
+"xdotool key alt+Left"
+b:8
+"xdotool click --repeat 2 1"
+b:9 + Release
