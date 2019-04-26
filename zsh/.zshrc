@@ -11,23 +11,21 @@ plugins=(
   git archlinux docker autojump zsh-autosuggestions zsh-syntax-highlighting
 )
 
-# source environment
-[ -f ~/.zsh_env ] && source ~/.zsh_env
+[ -d ~/.oh-my-zsh ] && export ZSH=~/.oh-my-zsh
 
-# source oh-my-zsh
-[ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
+typeset -a sources
+sources+=$ZSH/oh-my-zsh.sh
+sources+=/usr/share/autojump/autojump.sh
+sources+=~/.zsh_env
+sources+=~/.zsh_env_work
+sources+=~/.zsh_misc
+sources+=~/.zsh_git
+sources+=~/.zsh_docker
+sources+=~/.zsh_emby
+sources+=~/.zsh_nomad
 
-# source misc config
-[ -f ~/.zsh_misc ] && source ~/.zsh_misc
-
-# source git config
-[ -f ~/.zsh_git ] && source ~/.zsh_git
-
-# source docker config
-[ -f ~/.zsh_docker ] && source ~/.zsh_docker
-
-# source emby config
-[ -f ~/.zsh_emby ] && source ~/.zsh_emby
-
-# source nomad config
-[ -f ~/.zsh_nomad ] && source ~/.zsh_nomad
+for file in $sources[@]; do
+    if [ -f "$file" ]; then
+        source "$file"
+    fi
+done
