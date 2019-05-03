@@ -1,9 +1,16 @@
 #================================================
 #                 Miscellaneous
 #================================================
+## zsh
 alias zshconfig="sudo vim ~/.zshrc"
 alias ohmyzsh="sudo vim ~/.oh-my-zsh"
 
+## systemd
+alias jcfu='sudo journalctl -f -u'
+alias jctl='sudo journalctl -u'
+alias sctl='sudo systemctl'
+
+## fuzzy find
 alias fzyf="find . -type f | fzy"
 alias fzyd="find . -type d | fzy"
 
@@ -17,9 +24,11 @@ alias nano='nano -w'
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 
+## vs code
 alias vsc="code"
 alias vs="code"
 
+## home
 alias aurup='yaourt -Syu --aur --noconfirm'
 alias backups='sh ~/.scripts/borg/listBackups.sh'
 alias nas='ssh admin@192.168.1.100'
@@ -55,7 +64,7 @@ alias lm='la | more'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'                    # 'rm -i' prompts for every file
-# safer alternative w/ timeout, not stored in history
+## safer alternative w/ timeout, not stored in history
 alias rm=' timeout 3 rm -Iv --one-file-system'
 alias ln='ln -i'
 alias chown='chown --preserve-root'
@@ -81,7 +90,7 @@ alias xx='exa --long --header --git'
 ## Suffixes
 alias -s vim='sudo vim'
 
-# Fix screen resolution and mouse after removing/attaching to dock
+## Fix screen resolution and mouse after removing/attaching to dock
 alias mouse='xinput --set-prop "pointer:Ione USB Gaming Mouse" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
 alias screen='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
 alias docked='mouse && screen'
