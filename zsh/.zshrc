@@ -23,6 +23,7 @@ sources+=~/.zsh_git
 sources+=~/.zsh_docker
 sources+=~/.zsh_emby
 sources+=~/.zsh_nomad
+sources+=~/.zsh_terraform
 
 for file in $sources[@]; do
     if [ -f "$file" ]; then

@@ -1,0 +1,8 @@
+#================================================
+#                  Terraform
+#================================================
+
+alias tfinit='terraform init'
+alias tfplan='terraform plan'
+alias tfapply='terraform apply'
+alias tfdestroy='terraform destroy'
