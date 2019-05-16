@@ -3,12 +3,12 @@
 #================================================
 dxsh() { docker exec -it $1 sh }
 dxbash() { docker exec -it $1 bash }
-alias dx="docker exec"
-alias dstop="docker stop"
-alias drun="docker run"
-alias dxit="docker exec -it"
-alias drm="docker rm"
-alias drmi="docker rm"
+alias dx='docker exec'
+alias dstop='docker stop'
+alias drun='docker run'
+alias dxit='docker exec -it'
+alias drm='docker rm'
+alias drmi='docker rm'
 alias dcu='docker-compose up -d'
 alias dcup='docker-compose up -d'
 alias dcub='docker-compose up --build -d'

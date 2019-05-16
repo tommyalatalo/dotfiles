@@ -2,8 +2,8 @@
 #                 Miscellaneous
 #================================================
 ## zsh
-alias zshconfig="sudo vim ~/.zshrc"
-alias ohmyzsh="sudo vim ~/.oh-my-zsh"
+alias zshconfig='sudo vim ~/.zshrc'
+alias ohmyzsh='sudo vim ~/.oh-my-zsh'
 
 ## systemd
 alias jcfu='sudo journalctl -f -u'
@@ -11,8 +11,8 @@ alias jctl='sudo journalctl -u'
 alias sctl='sudo systemctl'
 
 ## fuzzy find
-alias fzyf="find . -type f | fzy"
-alias fzyd="find . -type d | fzy"
+alias fzyf='find . -type f | fzy'
+alias fzyd='find . -type d | fzy'
 
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
@@ -25,8 +25,8 @@ alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 
 ## vs code
-alias vsc="code"
-alias vs="code"
+alias vsc='code'
+alias vs='code'
 
 ## home
 alias aurup='yaourt -Syu --aur --noconfirm'
