@@ -5,11 +5,6 @@
 alias zshconfig='sudo vim ~/.zshrc'
 alias ohmyzsh='sudo vim ~/.oh-my-zsh'
 
-## systemd
-alias jcfu='sudo journalctl -f -u'
-alias jctl='sudo journalctl -u'
-alias sctl='sudo systemctl'
-
 ## fuzzy find
 alias fzyf='find . -type f | fzy'
 alias fzyd='find . -type d | fzy'

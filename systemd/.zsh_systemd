@@ -1,0 +1,10 @@
+#================================================
+#                    systemd
+#================================================
+
+alias sctl='sudo systemctl'
+alias sctlr='sudo systemctl restart'
+alias jctl='journalctl -u'
+alias jcfu='journalctl -f -u'
+
+alias remount='sctl daemon-reload && sctlr remote-fs.target && sctlr local-fs.target'

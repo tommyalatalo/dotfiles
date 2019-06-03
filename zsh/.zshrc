@@ -24,6 +24,7 @@ sources+=~/.zsh_docker
 sources+=~/.zsh_emby
 sources+=~/.zsh_nomad
 sources+=~/.zsh_terraform
+sources+=~/.zsh_systemd
 
 for file in $sources[@]; do
     if [ -f "$file" ]; then
