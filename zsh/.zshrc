@@ -22,6 +22,7 @@ sources+=~/.zsh_misc
 sources+=~/.zsh_git
 sources+=~/.zsh_docker
 sources+=~/.zsh_emby
+sources+=~/.zsh_consul
 sources+=~/.zsh_nomad
 sources+=~/.zsh_terraform
 sources+=~/.zsh_systemd
