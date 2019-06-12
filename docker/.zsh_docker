@@ -25,6 +25,9 @@ alias spop='git stash pop'
 alias sd='git stash && git stash drop'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
+alias dvp='docker volume prune'
+alias dvls='docker volume ls'
+alias dvrm='docker volume rm'
 alias idb='docker exec -it influxdb /bin/bash'
 alias dnuke='docker system prune -a && docker volume prune' #stop containers first
 
