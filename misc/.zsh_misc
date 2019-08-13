@@ -33,7 +33,7 @@ alias fbm='ssh root@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbmovies.sh"'
 alias fbt='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbtvshows.sh"'
 alias fbc='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbconcerts.sh"'
 
-## Privileged access
+## privileged access
 if (( UID != 0 )); then
     alias sudo='sudo '
     alias scat='sudo cat'
@@ -55,7 +55,7 @@ alias lz='ll -rS'                   # sort by size
 alias lt='ll -rt'                   # sort by date
 alias lm='la | more'
 
-## Safety features
+## safety features
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'                    # 'rm -i' prompts for every file
@@ -67,25 +67,28 @@ alias chmod='sudo chmod --preserve-root'
 alias chgrp='sudo chgrp --preserve-root'
 alias cls=' echo -ne "\033c"'       # clear screen for real (it does not work in Terminology)
 
-## Make Bash error tolerant
+## make bash error tolerant
 alias :q=' exit'
 alias :Q=' exit'
 alias :x=' exit'
 
-## Navigation
+## navigation
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-## General
+## general
 alias cl='clear'
 alias xx='exa --long --header --git'
 
-## Suffixes
+## suffixes
 alias -s vim='sudo vim'
 
-## Fix screen resolution and mouse after removing/attaching to dock
+## fix screen resolution and mouse after removing/attaching to dock
 alias mouse='xinput --set-prop "pointer:Ione USB Gaming Mouse" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
 alias screen='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
 alias docked='mouse && screen'
+
+## misc
+alias pf='./portforward.sh'

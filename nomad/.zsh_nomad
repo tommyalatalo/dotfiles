@@ -2,7 +2,8 @@
 #                    Nomad 
 #================================================
 
-alias nsmem='nomad server members'
+alias nsm='nomad server members'
+alias nsmem='nsm'
 alias njplan='nomad job plan'
 alias njrun='nomad job run'
 alias njstat='nomad job status'
