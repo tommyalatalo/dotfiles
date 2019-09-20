@@ -26,6 +26,7 @@ sources+=~/.zsh_consul
 sources+=~/.zsh_nomad
 sources+=~/.zsh_terraform
 sources+=~/.zsh_systemd
+sources+=~/.zsh_ansible
 
 for file in $sources[@]; do
     if [ -f "$file" ]; then
