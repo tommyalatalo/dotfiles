@@ -4,5 +4,8 @@
 
 alias tfinit='terraform init'
 alias tfplan='terraform plan'
+alias tfp='tfplan'
 alias tfapply='terraform apply'
+alias tfa='tfapply'
 alias tfdestroy='terraform destroy'
+alias tfd='tfdestroy'
