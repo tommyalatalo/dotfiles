@@ -9,6 +9,7 @@ alias ohmyzsh='sudo vim ~/.oh-my-zsh'
 alias fzyf='find . -type f | fzy'
 alias fzyd='find . -type d | fzy'
 
+# misc
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
 alias more='less'
@@ -18,10 +19,13 @@ alias mkdir='mkdir -p -v'
 alias nano='nano -w'
 alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
+alias h='history | rg -i'
+alias p='ps aux | rg -i'
 
 ## vs code
 alias vsc='code'
 alias vs='code'
+alias vs.='vs .'
 
 ## home
 alias aurup='yaourt -Syu --aur --noconfirm'
@@ -87,7 +91,7 @@ alias xx='exa --long --header --git'
 alias -s vim='sudo vim'
 
 ## fix screen resolution and mouse after removing/attaching to dock
-alias mouse='xinput --set-prop "pointer:Ione USB Gaming Mouse" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
+alias mouse='xinput --set-prop "pointer:Logitech Gaming Mouse G400" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
 alias screen='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
 alias docked='mouse && screen'
 
