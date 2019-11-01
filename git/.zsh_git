@@ -13,6 +13,7 @@ alias gcane='git commit --amend --no-edit'
 alias gco='git checkout'
 alias gcom='git checkout master'
 alias gcod='git checkout dev'
+alias gco--="git checkout --"
 alias gl='git log'
 alias gls='git log --graph --pretty=short --decorate --numstat --max-count=10'
 alias glf='git log --graph --pretty=full --decorate --numstat --max-count=10'
