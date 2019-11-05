@@ -44,5 +44,8 @@ alias gprune='git branch -vv | grep '"'"'origin/.*: gone]'"'"' | awk '"'"'{print
 alias prune='gprune'
 alias gforceprune='git branch -vv | grep '"'"'origin/.*: gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -D'
 alias forceprune='gforceprune'
+alias stash='git stash'
+alias pop='git stash pop'
+alias spop='pop'
 
 gcob() { git checkout -b $1; git push -u origin $1; }
