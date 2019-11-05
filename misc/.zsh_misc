@@ -21,6 +21,7 @@ alias ping='ping -c 5'
 alias dmesg='dmesg -HL'
 alias h='history | rg -i'
 alias p='ps aux | rg -i'
+alias cat='bat'
 
 ## vs code
 alias vsc='code'
