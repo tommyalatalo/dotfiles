@@ -23,6 +23,12 @@ alias h='history | rg -i'
 alias p='ps aux | rg -i'
 alias cat='bat'
 
+## task warrior
+alias t='task'
+alias ta='task add'
+alias tl='task list'
+alias td='task done'
+
 ## vs code
 alias vsc='code'
 alias vs='code'
