@@ -3,6 +3,7 @@
 #================================================
 
 alias tfinit='terraform init'
+alias tfi='terraform init'
 alias tfplan='terraform plan'
 alias tfp='tfplan'
 alias tfapply='terraform apply'
