@@ -18,6 +18,7 @@ sources+=$ZSH/oh-my-zsh.sh
 sources+=/usr/share/autojump/autojump.sh
 sources+=~/.zsh_env
 sources+=~/.zsh_env_work
+sources+=~/.zsh_fzf
 sources+=~/.zsh_misc
 sources+=~/.zsh_git
 sources+=~/.zsh_docker

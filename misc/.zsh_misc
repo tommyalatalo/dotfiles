@@ -5,10 +5,6 @@
 alias zshconfig='sudo vim ~/.zshrc'
 alias ohmyzsh='sudo vim ~/.oh-my-zsh'
 
-## fuzzy find
-alias fzyf='find . -type f | fzy'
-alias fzyd='find . -type d | fzy'
-
 # misc
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
