@@ -1,7 +1,9 @@
-export PATH=$PATH:/opt/bin
+export PATH=$PATH:/opt/bin:$HOME/bin
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export ZPFX="~/.zplugin/plugins"
 
-export LANG="en_US.UTF-8"
+export FORGIT_LOG_FZF_OPTS="--reverse"
+
 export LC_CTYPE="en_US.UTF-8"
 export LC_NUMERIC="sv_SE.UTF-8"
 export LC_TIME="en_DK.UTF-8"
