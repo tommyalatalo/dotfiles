@@ -18,6 +18,7 @@ alias dmesg='dmesg -HL'
 alias h='history | rg -i'
 alias p='ps aux | rg -i'
 alias cat='bat'
+alias catp='bat -p'
 
 ## task warrior
 alias t='task'
