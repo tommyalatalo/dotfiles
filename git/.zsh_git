@@ -7,7 +7,6 @@ alias gaa='git add -A'
 alias ga.='git add .'
 alias gau='git add -u'
 alias gb='git branch'
-alias gc='git commit -m'
 alias gca='git commit --amend'
 alias gcane='git commit --amend --no-edit'
 alias gco='git checkout'
@@ -46,4 +45,5 @@ alias stash='git stash'
 alias pop='git stash pop'
 alias spop='pop'
 
+gc() { git commit -m "$*" }
 gcob() { git checkout -b $1; git push -u origin $1; }
