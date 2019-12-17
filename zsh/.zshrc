@@ -23,6 +23,9 @@ setopt auto_cd                  # auto cd if input is not a command
 setopt auto_menu                # automatically use menu completion
 setopt always_to_end            # move cursor to end if word had one match
 
+# add menu selection with arrow for completion
+zstyle ':completion:*' menu select
+
 typeset -a sources
 sources+=$HOME/.zsh_bindkeys
 sources+=$HOME/.zsh_env
