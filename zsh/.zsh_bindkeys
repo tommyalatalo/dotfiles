@@ -1,0 +1,48 @@
+# autoload -Uz up-line-or-beginning-search
+# autoload -Uz down-line-or-beginning-search
+zle -N history-substring-search-up
+zle -N history-substring-search-down
+
+# # if numlock is off, translate keys to make them appear the same as with numlock on
+bindkey -s '^[OM' '^M'  # enter
+bindkey -s '^[Ok' '+'
+bindkey -s '^[Om' '-'
+bindkey -s '^[Oj' '*'
+bindkey -s '^[Oo' '/'
+bindkey -s '^[OX' '='
+
+# # if someone switches our terminal to application mode (smkx), translate keys to make
+# # them appear the same as in raw mode (rmkx).
+bindkey -s '^[OH' '^[[H'  # home
+bindkey -s '^[OF' '^[[F'  # end
+bindkey -s '^[OA' '^[[A'  # up
+bindkey -s '^[OB' '^[[B'  # down
+bindkey -s '^[OD' '^[[D'  # left
+bindkey -s '^[OC' '^[[C'  # right
+
+# # tty sends different key codes, translate them to regular
+bindkey -s '^[[1~' '^[[H'  # home
+bindkey -s '^[[4~' '^[[F'  # end
+
+bindkey '^?'      backward-delete-char          # bs         delete one char backward
+bindkey '^[[3~'   delete-char                   # delete     delete one char forward
+bindkey '^[[H'    beginning-of-line             # home       go to the beginning of line
+bindkey '^[[F'    end-of-line                   # end        go to the end of line
+bindkey '^[[1;5C' forward-word                  # ctrl+right go forward one word
+bindkey '^[[1;5D' backward-word                 # ctrl+left  go backward one word
+bindkey '^H'      backward-kill-word            # ctrl+bs    delete previous word
+bindkey '^[[3;5~' kill-word                     # ctrl+del   delete next word
+bindkey '^J'      backward-kill-line            # ctrl+j     delete everything before cursor
+bindkey '^[[D'    backward-char                 # left       move cursor one char backward
+bindkey '^[[C'    forward-char                  # right      move cursor one char forward
+bindkey '^[[A'    history-substring-search-up   # up         prev command in history
+bindkey '^[[B'    history-substring-search-down # down       next command in history
+
+# completion waiting dots
+expand-or-complete-with-dots() {
+    echo -n "\e[31m...\e[0m"
+    zle expand-or-complete
+    zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots

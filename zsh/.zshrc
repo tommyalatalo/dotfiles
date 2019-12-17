@@ -1,49 +1,55 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
+# enable powerlevel10k instant prompt. should stay close to the top of ~/.zshrc.
+# initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Disable auto correct
-unsetopt correct_all
-unsetopt correct
-
-#ZSH_THEME="eastwood-custom"
-# ZSH_THEME="avit-improved"
 COMPLETION_WAITING_DOTS="true"
 
-# plugins=(
-#     git archlinux docker autojump zsh-autosuggestions zsh-syntax-highlighting
-# )
-# export ZSH=~/.oh-my-zsh
-# [ -d ~/.oh-my-zsh ] && export ZSH=~/.oh-my-zsh
+# history settings
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt append_history           # append to histfile instead of overwriting
+setopt hist_expire_dups_first   # prune duplicate commands before unique from history
+setopt hist_ignore_space        # remove commands with starting whitespace from history
+setopt share_history            # append and import history between terminals
+
+# disable auto correct
+unsetopt correct                # do not autocorrect command
+unsetopt correct_all            # do not autocorrect all args
+
+# other zsh options
+setopt auto_cd                  # auto cd if input is not a command
+setopt auto_menu                # automatically use menu completion
+setopt always_to_end            # move cursor to end if word had one match
 
 typeset -a sources
-# sources+=$ZSH/oh-my-zsh.sh
-# sources+=/usr/share/autojump/autojump.sh
-sources+=~/.zsh_env
-sources+=~/.zsh_env_work
-sources+=~/.zsh_fzf
-sources+=~/.zsh_misc
-sources+=~/.zsh_git
-sources+=~/.zsh_docker
-sources+=~/.zsh_emby
-sources+=~/.zsh_consul
-sources+=~/.zsh_nomad
-sources+=~/.zsh_terraform
-sources+=~/.zsh_systemd
-sources+=~/.zsh_ansible
-sources+=~/.p10k.zsh
+sources+=$HOME/.zsh_bindkeys
+sources+=$HOME/.zsh_env
+sources+=$HOME/.zsh_env_work
+sources+=$HOME/.zsh_fzf
+sources+=$HOME/.zsh_misc
+sources+=$HOME/.zsh_git
+sources+=$HOME/.zsh_docker
+sources+=$HOME/.zsh_consul
+sources+=$HOME/.zsh_nomad
+sources+=$HOME/.zsh_terraform
+sources+=$HOME/.zsh_systemd
+sources+=$HOME/.zsh_ansible
 
 for file in $sources[@]; do
-    if [ -f "$file" ]; then
-        source "$file"
-    fi
+    [ -s "$file" ] && source "$file"
 done
 
-if [ "$(tty)" = "/dev/tty1" -o "$(tty)" = "/dev/vc/1" ] ; then
+if [[ $TTY == /dev/(tty|vc)1 ]]; then
     startxfce4
+fi
+
+if [ ! -d $HOME/.zplugin ]; then
+    echo "zplugin missing, installing..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
 
 ### Added by Zplugin's installer
@@ -52,40 +58,39 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin installer's chunk
 
+#=========
 # zplugin
+#=========
+zplugin light jreese/zsh-titles
 zplugin light zsh-users/zsh-completions
 zplugin light zsh-users/zsh-autosuggestions
-# zplugin light zsh-users/zsh-syntax-highlighting
+zplugin light-mode atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" for zdharma/fast-syntax-highlighting
 zplugin light zsh-users/zsh-history-substring-search
-zplugin light zdharma/fast-syntax-highlighting
 zplugin light wfxr/forgit
 
 # binaries
 zplugin wait pack for fzf
-# zplugin ice from"gh-r" as"program"
-# zplugin load junegunn/fzf-bin
 
 # load omz libraries
 zplugin snippet OMZ::lib/git.zsh
 
 # load omz plugins
 zplugin snippet OMZ::plugins/autojump/autojump.plugin.zsh
-zplugin snippet OMZ::plugins/docker/_docker
 zplugin snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-# zplugin snippet OMZ::plugins/git/git.plugin.zsh
-# zplugin snippet OMZ::plugins/vagrant/_vagrant
 zplugin snippet OMZ::plugins/vscode/vscode.plugin.zsh
-# zplugin snippet OMZ::plugins/zsh_reload/zsh_reload.plugin.zsh
-zplugin cdclear -q # <- forget completions provided up to this moment
 
-setopt promptsubst
+# load omz completions
+zplugin ice as"completion"; zplugin snippet OMZ::plugins/docker/_docker
+zplugin ice as"completion"; zplugin snippet OMZ::plugins/vagrant/_vagrant
+zplugin cdclear -q # <- forget completions provided up to this moment
 
 # load normal github plugin with theme depending on omz git library
 zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
-# zplugin light oh-my-zsh
-# zplugin light oh-my-zsh plugins/docker
-# zplugin light oh-my-zsh plugins/autojump
+# to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

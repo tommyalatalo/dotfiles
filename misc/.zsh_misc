@@ -6,6 +6,7 @@ alias zshconfig='sudo vim ~/.zshrc'
 alias ohmyzsh='sudo vim ~/.oh-my-zsh'
 
 # misc
+alias ~='cd ~'
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
 alias more='less'

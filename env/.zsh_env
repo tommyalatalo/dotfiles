@@ -1,4 +1,6 @@
 export PATH=$PATH:/opt/bin:$HOME/bin
+[ ! -z "$(go env GOPATH)" ] && export PATH=$PATH:$(go env GOPATH)/bin
+
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export ZPFX="~/.zplugin/plugins"
 
