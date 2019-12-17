@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-COMPLETION_WAITING_DOTS="true"
-
 # history settings
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=10000
