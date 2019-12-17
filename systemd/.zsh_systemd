@@ -2,8 +2,15 @@
 #                    systemd
 #================================================
 
+# systemlevel
+start() { sudo systemctl start "$1"; }
+stop() { sudo systemctl stop "$1"; }
+restart() { sudo systemctl restart "$1"; }
+status() { sudo systemctl status "$1"; }
+enabled() { sudo systemctl enable "$1"; listd; }
+disabled() { sudo systemctl disable "$1"; listd; }
+
 alias sctl='sudo systemctl'
-alias sctlr='sudo systemctl restart'
 alias jctl='journalctl -u'
 alias jcfu='journalctl -f -u'
 
