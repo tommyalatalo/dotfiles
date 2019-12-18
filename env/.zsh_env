@@ -1,10 +1,3 @@
-[[ ":$PATH:" != *":$HOME/bin:"* ]] && path+=$HOME/bin
-[[ ":$PATH:" != *":/opt/bin:"* ]] && path+=/opt/bin
-
-GOPATH=$(go env GOPATH 2> /dev/null)
-if [[ ! -z "$GOPATH" ]] && [[ ":$PATH:" != *":$GOPATH"* ]]; then
-    path+=("$(go env GOPATH)/bin")
-fi
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export ZPFX="~/.zplugin/plugins"
@@ -26,3 +19,12 @@ export LC_IDENTIFICATION="en_US.UTF-8"
 
 export BAT_THEME="Monokai Extended"
 export TERMINAL=xfce4-terminal
+
+[[ ":$PATH:" != *":$HOME/bin:"* ]] && path+=$HOME/bin
+[[ ":$PATH:" != *":$ZPFX/bin:"* ]] && path+=$ZPFX/bin
+[[ ":$PATH:" != *":/opt/bin:"* ]] && path+=/opt/bin
+
+GOPATH=$(go env GOPATH 2> /dev/null)
+if [[ ! -z "$GOPATH" ]] && [[ ":$PATH:" != *":$GOPATH"* ]]; then
+    path+=("$(go env GOPATH)/bin")
+fi
