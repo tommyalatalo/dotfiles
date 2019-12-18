@@ -3,12 +3,12 @@
 #================================================
 
 # systemlevel
-start() { sudo systemctl start "$1"; }
-stop() { sudo systemctl stop "$1"; }
-restart() { sudo systemctl restart "$1"; }
-status() { sudo systemctl status "$1"; }
-enabled() { sudo systemctl enable "$1"; listd; }
-disabled() { sudo systemctl disable "$1"; listd; }
+function  start() { sudo systemctl start "$1"; }
+function  stop() { sudo systemctl stop "$1"; }
+function  restart() { sudo systemctl restart "$1"; }
+function  status() { sudo systemctl status "$1"; }
+function  enabled() { sudo systemctl enable "$1"; listd; }
+function  disabled() { sudo systemctl disable "$1"; listd; }
 
 alias sctl='sudo systemctl'
 alias jctl='journalctl -u'

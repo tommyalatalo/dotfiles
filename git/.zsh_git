@@ -45,5 +45,5 @@ alias stash='git stash'
 alias pop='git stash pop'
 alias spop='pop'
 
-gc() { git commit -m "$*" }
-gcob() { git checkout -b $1; git push -u origin $1; }
+function gc() { git commit -m "$*" }
+function gcob() { git checkout -b $1; git push -u origin $1; }
