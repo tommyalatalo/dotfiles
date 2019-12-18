@@ -1,6 +1,6 @@
 
 export SSH_KEY_PATH="~/.ssh/rsa_id"
-export ZPFX="~/.zplugin/plugins"
+export ZPFX="$HOME/.zplugin/plugins"
 
 export FORGIT_LOG_FZF_OPTS="--reverse"
 
