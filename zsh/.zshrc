@@ -38,6 +38,21 @@ setopt always_to_end            # move cursor to end if word had one match
 # add menu selection with arrow for completion
 zstyle ':completion:*' menu select
 
+# set teminal title dynamically
+function set-term-title-precmd() {
+    emulate -L zsh
+    print -rn -- $'\e]0;'$USER\@$HOST ${(V%):-'%~'}$'\a' >$TTY
+}
+function set-term-title-preexec() {
+    emulate -L zsh
+    print -rn -- $'\e]0;'$USER\@$HOST ${(V%)1}$'\a' >$TTY
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec set-term-title-preexec
+add-zsh-hook precmd set-term-title-precmd
+set-term-title-precmd
+
+# source aliases etc
 typeset -a sources
 sources+=$HOME/.zsh_bindkeys
 sources+=$HOME/.zsh_env
@@ -60,6 +75,9 @@ if [[ $TTY == /dev/(tty|vc)1 ]]; then
     startxfce4
 fi
 
+#=========
+# zplugin
+#=========
 if [ ! -d $HOME/.zplugin ]; then
     echo "zplugin missing, installing..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
@@ -71,10 +89,6 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin installer's chunk
 
-#=========
-# zplugin
-#=========
-zplugin light jreese/zsh-titles
 zplugin light zsh-users/zsh-completions
 zplugin light zsh-users/zsh-autosuggestions
 zplugin light-mode atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" for zdharma/fast-syntax-highlighting
