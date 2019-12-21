@@ -96,7 +96,7 @@ zplugin light zsh-users/zsh-history-substring-search
 zplugin light wfxr/forgit
 
 # binaries
-zplugin wait pack for fzf
+zplugin pack"binary" for fzf
 
 # load omz libraries
 zplugin snippet OMZ::lib/git.zsh
