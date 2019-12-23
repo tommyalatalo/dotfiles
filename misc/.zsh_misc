@@ -39,9 +39,6 @@ alias nas='ssh adm@omv'
 alias rnas='ssh admin@192.168.2.100'
 alias omv='ssh adm@omv'
 alias res='sudo reboot now'
-alias fbm='ssh root@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbmovies.sh"'
-alias fbt='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbtvshows.sh"'
-alias fbc='ssh admin@192.168.1.100 "cd /volume1/scripts/filebot/; ./fbconcerts.sh"'
 
 ## privileged access
 if (( UID != 0 )); then
@@ -95,7 +92,7 @@ alias xx='exa --long --header --git'
 ## suffixes
 alias -s vim='sudo vim'
 
-## fix screen resolution and mouse after removing/attaching to dock
+## fix screen resolution and mouse after attaching/detaching dock
 alias mouse='xinput --set-prop "pointer:Logitech Gaming Mouse G400" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
 alias screen='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
 alias docked='mouse && screen'

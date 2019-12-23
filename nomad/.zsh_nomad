@@ -1,15 +1,15 @@
 #================================================
-#                    Nomad 
+#                    Nomad
 #================================================
 
 alias nsm='nomad server members'
-alias nsmem='nsm'
+alias nsmem='nomad server members'
 alias njp='nomad job plan'
-alias njplan='njp'
+alias njplan='nomad job plan'
 alias njr='nomad job run'
-alias njrun='njr'
+alias njrun='nomad job run'
 alias njst='nomad job status'
-alias njstat='njst'
+alias njstat='nomad job status'
 alias njs='nomad job stop'
 alias njsp='nomad job stop -purge'
-alias njpurge='njpu'
+alias njpurge='nomad job stop -purge'
