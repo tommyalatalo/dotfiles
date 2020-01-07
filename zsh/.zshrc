@@ -78,8 +78,9 @@ fi
 #=========
 # zplugin
 #=========
-if [ ! -d $HOME/.zplugin ]; then
+if [ ! -d $HOME/.zplugin/completions ]; then
     echo "zplugin missing, installing..."
+    mkdir -p $HOME/.zplugin/completions
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
 fi
 
