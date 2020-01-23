@@ -75,45 +75,49 @@ if [[ $TTY == /dev/(tty|vc)1 ]]; then
     startxfce4
 fi
 
-#=========
-# zplugin
-#=========
-if [ ! -d $HOME/.zplugin/completions ]; then
-    echo "zplugin missing, installing..."
-    mkdir -p $HOME/.zplugin/completions
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+#======================================
+#               zinit
+#======================================
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "$HOME/.zinit/completions" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit installer's chunk
 
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
-
-zplugin light zsh-users/zsh-completions
-zplugin light zsh-users/zsh-autosuggestions
-zplugin light-mode atinit"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" for zdharma/fast-syntax-highlighting
-zplugin light zsh-users/zsh-history-substring-search
-zplugin light wfxr/forgit
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-history-substring-search
+zinit light wfxr/forgit
 
 # binaries
-zplugin pack"binary" for fzf
+zinit ice from"gh-r" as"program" mv"fzf -> $ZPFX/bin/fzf" pick"$ZPFX/bin/fzf"; zinit load junegunn/fzf-bin
+zinit ice from"gh-r" as"program" mv"ripgrep*/rg -> $ZPFX/bin/rg" pick"$ZPFX/bin/rg"; zinit load BurntSushi/ripgrep
+zinit ice from"gh-r" as"program" mv"exa* -> $ZPFX/bin/exa" pick"$ZPFX/bin/exa"; zinit load ogham/exa
+zinit ice from"gh-r" as"program" mv"**/nnn -> $ZPFX/bin/nnn" pick"$ZPFX/bin/nnn"; zinit load jarun/nnn
 
 # load omz libraries
-zplugin snippet OMZ::lib/git.zsh
+zinit snippet OMZ::lib/git.zsh
 
 # load omz plugins
-zplugin snippet OMZ::plugins/autojump/autojump.plugin.zsh
-zplugin snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-zplugin snippet OMZ::plugins/vscode/vscode.plugin.zsh
+zinit snippet OMZ::plugins/autojump/autojump.plugin.zsh
+zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
+zinit snippet OMZ::plugins/vscode/vscode.plugin.zsh
 
 # load omz completions
-zplugin ice as"completion"; zplugin snippet OMZ::plugins/docker/_docker
-zplugin ice as"completion"; zplugin snippet OMZ::plugins/vagrant/_vagrant
-zplugin cdclear -q # <- forget completions provided up to this moment
+zinit ice as"completion"; zinit snippet OMZ::plugins/docker/_docker
+zinit ice as"completion"; zinit snippet OMZ::plugins/vagrant/_vagrant
+# zinit cdclear -q # <- forget completions provided up to this moment
 
 # load normal github plugin with theme depending on omz git library
-zplugin ice depth=1; zplugin light romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
