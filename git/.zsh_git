@@ -43,6 +43,8 @@ alias gforceprune='git branch -vv | grep '"'"'origin/.*: gone]'"'"' | awk '"'"'{
 alias gstash='git stash'
 alias gstashcl='git stash clear'
 alias gpop='git stash pop'
+alias gt='git tag'
+alias gtl='git tag --list'
 
 function gc() { git commit -m "$*" }
 function gcob() { git checkout -b $1; git push -u origin $1; }
