@@ -81,7 +81,7 @@ fi
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
-    command mkdir -p "$HOME/.zinit/completions" && command chmod g-rwX "$HOME/.zinit"
+    command mkdir -p "$HOME/.zinit/completions" "$ZPFX/bin" && command chmod g-rwX "$HOME/.zinit"
     command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
     print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
     print -P "%F{160}▓▒░ The clone has failed.%f"
@@ -101,7 +101,9 @@ zinit light wfxr/forgit
 zinit ice from"gh-r" as"program" mv"fzf -> $ZPFX/bin/fzf" pick"$ZPFX/bin/fzf"; zinit load junegunn/fzf-bin
 zinit ice from"gh-r" as"program" mv"ripgrep*/rg -> $ZPFX/bin/rg" pick"$ZPFX/bin/rg"; zinit load BurntSushi/ripgrep
 zinit ice from"gh-r" as"program" mv"exa* -> $ZPFX/bin/exa" pick"$ZPFX/bin/exa"; zinit load ogham/exa
-zinit ice from"gh-r" as"program" mv"**/nnn -> $ZPFX/bin/nnn" pick"$ZPFX/bin/nnn"; zinit load jarun/nnn
+zinit ice from"gh-r" as"program" mv"bat*/bat -> $ZPFX/bin/bat" pick"$ZPFX/bin/bat" bpick"*musl*"; zinit load sharkdp/bat
+# TODO: enable nnn when statically linked binary is released
+# zinit ice from"gh-r" as"program" mv"**/nnn -> $ZPFX/bin/nnn" pick"$ZPFX/bin/nnn"; zinit load jarun/nnn
 
 # load omz libraries
 zinit snippet OMZ::lib/git.zsh
