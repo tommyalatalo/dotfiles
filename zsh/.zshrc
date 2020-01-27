@@ -91,11 +91,13 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
 
+# plugins
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
 zinit light wfxr/forgit
+zinit ice pick"misc/quitcd/quitcd.zsh"; zinit light jarun/nnn
 
 # binaries
 zinit ice from"gh-r" as"program" mv"fzf -> $ZPFX/bin/fzf" pick"$ZPFX/bin/fzf"; zinit load junegunn/fzf-bin
