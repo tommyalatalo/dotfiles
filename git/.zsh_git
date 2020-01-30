@@ -42,6 +42,7 @@ alias gprune='git branch -vv | grep '"'"'origin/.*: gone]'"'"' | awk '"'"'{print
 alias gforceprune='git branch -vv | grep '"'"'origin/.*: gone]'"'"' | awk '"'"'{print $1}'"'"' | xargs git branch -D'
 alias gstash='git stash'
 alias gstashcl='git stash clear'
+alias gdrop='git stash drop'
 alias gpop='git stash pop'
 alias gt='git tag'
 alias gtl='git tag --list'
