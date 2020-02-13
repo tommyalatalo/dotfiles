@@ -104,8 +104,7 @@ zinit ice from"gh-r" as"program" mv"fzf -> $ZPFX/bin/fzf" pick"$ZPFX/bin/fzf"; z
 zinit ice from"gh-r" as"program" mv"ripgrep*/rg -> $ZPFX/bin/rg" pick"$ZPFX/bin/rg"; zinit load BurntSushi/ripgrep
 zinit ice from"gh-r" as"program" mv"exa* -> $ZPFX/bin/exa" pick"$ZPFX/bin/exa"; zinit load ogham/exa
 zinit ice from"gh-r" as"program" mv"bat*/bat -> $ZPFX/bin/bat" pick"$ZPFX/bin/bat" bpick"*musl*"; zinit load sharkdp/bat
-# TODO: enable nnn when statically linked binary is released
-# zinit ice from"gh-r" as"program" mv"**/nnn -> $ZPFX/bin/nnn" pick"$ZPFX/bin/nnn"; zinit load jarun/nnn
+zinit ice from"gh-r" as"program" mv"nnn-static -> $ZPFX/bin/nnn" pick"$ZPFX/bin/nnn" bpick"*static*"; zinit load jarun/nnn
 
 # load omz libraries
 zinit snippet OMZ::lib/git.zsh
@@ -130,3 +129,6 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
