@@ -97,7 +97,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
 zinit light wfxr/forgit
-zinit ice pick"misc/quitcd/quitcd.zsh"; zinit light jarun/nnn
+zinit ice pick"misc/quitcd/quitcd.zsh" id-as"nnn-quitcd"; zinit light jarun/nnn
 
 # binaries
 zinit ice from"gh-r" as"program" mv"fzf -> $ZPFX/bin/fzf" pick"$ZPFX/bin/fzf"; zinit load junegunn/fzf-bin
