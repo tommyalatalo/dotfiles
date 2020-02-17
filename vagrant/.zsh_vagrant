@@ -1,0 +1,18 @@
+#================================================
+#                  Vagrant
+#================================================
+
+alias vbox='vagrant up'
+alias vup='vagrant up'
+alias vupp='vagrant up --provision'
+alias vd='vagrant destroy'
+alias vdf='vagrant destroy -f'
+alias vgs='vagrant global-status'
+alias vhalt='vagrant halt'
+alias vport='vagrant port'
+alias vprov='vagrant provision'
+alias vssh='vagrant ssh'
+alias vst='vagrant status'
+alias vsus='vagrant suspend'
+alias vres='vagrant resume'
+alias vver='vagrant resume'

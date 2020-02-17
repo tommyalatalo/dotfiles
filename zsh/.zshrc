@@ -64,6 +64,7 @@ sources+=$HOME/.zsh_docker
 sources+=$HOME/.zsh_consul
 sources+=$HOME/.zsh_nomad
 sources+=$HOME/.zsh_terraform
+sources+=$HOME/.zsh_vagrant
 sources+=$HOME/.zsh_systemd
 sources+=$HOME/.zsh_ansible
 
