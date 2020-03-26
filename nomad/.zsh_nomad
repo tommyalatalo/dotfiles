@@ -3,13 +3,8 @@
 #================================================
 
 alias nsm='nomad server members'
-alias nsmem='nomad server members'
 alias njp='nomad job plan'
-alias njplan='nomad job plan'
 alias njr='nomad job run'
-alias njrun='nomad job run'
 alias njst='nomad job status'
-alias njstat='nomad job status'
 alias njs='nomad job stop'
 alias njsp='nomad job stop -purge'
-alias njpurge='nomad job stop -purge'
