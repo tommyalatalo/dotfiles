@@ -92,8 +92,8 @@ alias -s vim='sudo vim'
 
 ## fix screen resolution and mouse after attaching/detaching dock
 alias mouse='xinput --set-prop "pointer:Logitech Gaming Mouse G400" "Coordinate Transformation Matrix" 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 3.5'
-alias screen='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
-alias docked='mouse && screen'
+alias mon='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --primary'
+alias docked='mouse && mon'
 
 ## misc
 alias pf='./portforward.sh'
