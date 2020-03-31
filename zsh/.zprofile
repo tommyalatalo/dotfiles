@@ -1,0 +1,1 @@
+[[ $TTY == /dev/(tty|vc)1 ]] && startxfce4

@@ -72,10 +72,6 @@ for file in $sources[@]; do
     [ -s "$file" ] && source "$file"
 done
 
-if [[ $TTY == /dev/(tty|vc)1 ]]; then
-    startxfce4
-fi
-
 #======================================
 #               zinit
 #======================================
@@ -118,7 +114,6 @@ zinit snippet OMZ::plugins/vscode/vscode.plugin.zsh
 # load omz completions
 zinit ice as"completion"; zinit snippet OMZ::plugins/docker/_docker
 zinit ice as"completion"; zinit snippet OMZ::plugins/vagrant/_vagrant
-# zinit cdclear -q # <- forget completions provided up to this moment
 
 # load normal github plugin with theme depending on omz git library
 zinit ice depth=1; zinit light romkatv/powerlevel10k
