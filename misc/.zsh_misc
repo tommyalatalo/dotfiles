@@ -53,6 +53,7 @@ if (( UID != 0 )); then
 fi
 
 ## ls
+alias l='ll'         # list view
 alias ll='exa -lahHF --git'         # list view
 alias lt='exa -lahHFT --git'        # tree view
 alias ls='exa -xaF'
