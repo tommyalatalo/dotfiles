@@ -10,3 +10,14 @@ alias njs='nomad job stop'
 alias njsp='nomad job stop -purge'
 alias nsgc='nomad system gc'
 alias nsrc='nomad system reconcile'
+
+#================================================
+#                    Levant
+#================================================
+
+alias ldep='levant deploy'
+alias ldis='levant dispatch'
+alias lpl='levant plan'
+alias lren='levant render'
+alias lsin='levant scale-in'
+alias lsout='levant scale-out'
