@@ -2,6 +2,11 @@
 #                    Nomad
 #================================================
 
+alias nast='nomad alloc status'
+alias nafs='nomad alloc fs'
+alias nalg='nomad alloc logs'
+alias nale='nomad alloc logs -stderr'
+alias naex='nomad alloc exec'
 alias nsm='nomad server members'
 alias njp='nomad job plan'
 alias njr='nomad job run'
