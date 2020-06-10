@@ -97,4 +97,4 @@ alias mon='xrandr --auto --output DP-2-1 --mode 2560x1440 --right-of DP-2-2 --pr
 alias docked='mouse && mon'
 
 ## misc
-alias pf='./portforward.sh'
+alias pf='sudo ./portforward.sh'
