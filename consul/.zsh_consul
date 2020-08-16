@@ -2,8 +2,11 @@
 #                    Consul
 #================================================
 
+alias ccn='consul catalog nodes'
+alias ccs='consul catalog services'
 alias cm='consul members'
-
-kvimp () {
-    consul kv import "$(cat $1 | jq '. | to_entries | . | map({key:.value.key, value:(.value.value| @base64)})')"
-}
+alias cmon='consul monitor'
+alias ckvg='consul kv get'
+alias ckvgr='consul kv get -recurse'
+alias ckvp='consul kv put'
+alias ckvd='consul kv delete'
